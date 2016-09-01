@@ -1,8 +1,14 @@
-var app = angular.module("orderZip", ['angularMoment', 'ngAnimate', 'ngRoute'])
+var app = angular.module("orderZip", ['angularMoment', 'ngAnimate', 'ngRoute']);
 
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: 'partials/landing.html'
+      templateUrl: 'views/landing.html'
     })
-  }]);
+    .when('/route', {
+      templateUrl: 'views/route.html'
+    })
+    .otherwise({
+      redirectTo: '/'
+    });
+}]);
