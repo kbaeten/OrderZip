@@ -2,9 +2,9 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('accounts_beers', function(table) {
     table.increments('id').primary();
-    table.integer('account_Id').references('id').inTable('accounts').notNullable();
+    table.integer('account_id').references('id').inTable('accounts').notNullable();
     table.integer('beer_id').references('id').inTable('beers').notNullable();
-    table.float('trigger_qty', 1, ).notNullable();
+    table.float('trigger_qty', 1).notNullable();
     table.integer('order_multiple').notNullable();
     table.integer('sku_velocity').notNullable();
     table.integer('week_1').notNullable();
