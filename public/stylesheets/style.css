@@ -1,12 +1,40 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url(/images/BeerCooler.jpg);
+  background-size: 100vw;
+  width: 100vw;
+  margin: 0;
+  font-family: 'Cabin', sans-serif;
+}
+ /*Header styling*/
+ header {
+  display: flex;
+  width: 100vw;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.75);
+  align-items: center;
+  justify-content: space-between;
+}
+#order {
+  font-size: 32px;
+  color: #D95C02;
+  margin-left: 30px;
+}
+#zip {
+  font-size: 32px;
+  color: white;
+}
+#navLinks {
+  display: flex;
+}
+.link {
+  font-size: 16px;
+  color: white;
+  margin-right: 30px;
+}
+.link:hover {
+  color: #D95C02;
 }
 
 a {
-  color: #00B7FF;
-}
-
-h1 {
-  color: blue;
+  text-decoration: none;
 }

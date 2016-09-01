@@ -6,13 +6,24 @@
     <link rel="stylesheet" href="stylesheets/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
     <script type="text/javascript" src="javascripts/app.js"></script>
     <script type="text/javascript" src="javascripts/services/services.js"></script>
     <script type="text/javascript" src="javascripts/controllers/controllers.js"></script>
     <script type="text/javascript" src="javascripts/directives/directives.js"></script>
 </head>
 <body>
-  <h1>Hello World</h1>
-  
+  <header>
+  <div>
+    <a href="?#/"><span id="order" class="title">Order</span><span id="zip" class="title">Zip</span></a>
+  </div>
+  <div id="navLinks">
+    <a href="?#/info"><span class="link">Route</span></a>
+  </div>
+</header>
+<main class="main-content" ng-view>
+
+</main>
+
 </body>
 </html>
