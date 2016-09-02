@@ -10,4 +10,19 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/accounts', function(req, res, next){
+  knex('accounts').then(function(data){
+    res.json(data);
+  })
+})
+router.get('/beers', function(req, res, next){
+  knex('beers').then(function(data){
+    res.json(data);
+  })
+})
+router.get('/api', function(req, res, next){
+  knex('accounts_beers').then(function(data){
+    res.json(data);
+  })
+})
 module.exports = router;
