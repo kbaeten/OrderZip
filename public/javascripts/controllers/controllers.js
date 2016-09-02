@@ -4,5 +4,5 @@ app.controller('signInController', function($scope, $http){
 })
 
 app.controller('routesController', function($scope, $http){
-  scope.view = {};
+  scope.route = {};
 })
