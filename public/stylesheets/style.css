@@ -81,3 +81,18 @@ a {
   display: flex;
   justify-content: center;
 }
+
+/*routes page styling*/
+
+#routesContainer {
+  width: 80vw;
+  height: 80vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  margin: auto;
+  margin-top: 50px;
+}
+#routesContainer h1 {
+  color: white;
+  text-align: center;
+  padding-top: 30px;
+}
