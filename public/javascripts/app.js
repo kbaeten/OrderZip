@@ -11,6 +11,10 @@ app.config(['$routeProvider', function($routeProvider) {
       templateUrl: 'views/route.html',
       controller: 'apiController'
     })
+    .when('/account', {
+      templateUrl: 'views/accountInfo/:id.html',
+      controller: 'apiController'
+    })
     .otherwise({
       redirectTo: '/'
     });
@@ -40,5 +44,6 @@ app.controller('apiController', ['$scope', '$http', function($scope, $http){
   })
   .then(function(data){
     $scope.view.accounts = data.data;
+    console.log($scope.view.accounts);
   })
 }])

@@ -92,11 +92,6 @@ a {
   margin-top: 50px;
   margin-bottom: 30px;
 }
-#routesContainer h1 {
-  color: white;
-  text-align: center;
-  padding-top: 30px;
-}
 hr {
   width: 80%;
   margin-bottom: 30px;
@@ -132,4 +127,36 @@ hr {
 }
 .routeLinksRight:hover {
   color: #007DC3;
+}
+
+/*Account info styling*/
+
+#accountsInfoContainer {
+  width: 80vw;
+  height: 80vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+#accountInfoTitle {
+  color: white;
+  font-size: 34px;
+  text-align: center;
+  padding-top: 30px;
+}
+.subInfoTitle {
+  color: #D95C02;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.accountInfo {
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+#street {
+  margin-bottom: 5px;
 }
