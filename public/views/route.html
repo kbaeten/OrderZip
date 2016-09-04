@@ -1,7 +1,12 @@
 <div id="routesContainer">
-  <h1>Today's Route</h1>
-  <div ng-repeat="account in view.accounts">
-    <a href="">{{ account.name }}</a>
+  <div id="routesTitle">Today's Route</div>
+  <hr color= "#007DC3">
+  <div ng-repeat="account in view.accounts" class="accountDiv">
+    <div class="routeAccount">{{ account.name }}</div>
+    <div>
+      <a href="" class="routeLinksLeft"><span>Acount Info</span></a>
+      <a href="" class="routeLinksRight" ><span>Place Order</span></a>
+    </div>
   </div>
 
 </div>

@@ -90,9 +90,46 @@ a {
   background-color: rgba(0, 0, 0, 0.75);
   margin: auto;
   margin-top: 50px;
+  margin-bottom: 30px;
 }
 #routesContainer h1 {
   color: white;
   text-align: center;
   padding-top: 30px;
+}
+hr {
+  width: 80%;
+  margin-bottom: 30px;
+}
+#routesTitle {
+  color: white;
+  font-size: 34px;
+  text-align: center;
+  padding-top: 30px;
+}
+.accountDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.routeAccount {
+  color: #D95C02;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.routeLinksLeft {
+  color: white;
+  margin-right: 10px;
+}
+.routeLinksRight {
+  color: white;
+  margin-left: 10px;
+}
+.routeLinksLeft:hover {
+  color: #007DC3;
+}
+.routeLinksRight:hover {
+  color: #007DC3;
 }
