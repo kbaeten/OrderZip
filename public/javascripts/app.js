@@ -8,7 +8,8 @@ app.config(['$routeProvider', function($routeProvider) {
       // controller: "signInController"
     })
     .when('/route', {
-      templateUrl: 'views/route.html'
+      templateUrl: 'views/route.html',
+      controller: 'apiController'
     })
     .otherwise({
       redirectTo: '/'
@@ -22,23 +23,22 @@ app.controller('apiController', ['$scope', '$http', function($scope, $http){
     url: "/api",
   })
   .then(function(data){
-    $scope.view.accountBeers = data;
-    console.log($scope.view.accountBeers);
+    $scope.view.accountBeers = data.data;
+    // console.log($scope.view.accountBeers);
   })
   $http({
     method: "GET",
     url:"/beers"
   })
   .then(function(data){
-    $scope.view.beers = data;
-    console.log($scope.view.beers);
+    $scope.view.beers = data.data;
+    // console.log($scope.view.beers);
   })
   $http({
     method: "GET",
     url: "/accounts"
   })
   .then(function(data){
-    $scope.view.accounts = data;
-    console.log($scope.view.accounts);
+    $scope.view.accounts = data.data;
   })
 }])
