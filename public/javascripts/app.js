@@ -11,8 +11,8 @@ app.config(['$routeProvider', function($routeProvider) {
       templateUrl: 'views/route.html',
       controller: 'apiController'
     })
-    .when('/account', {
-      templateUrl: 'views/accountInfo/:id.html',
+    .when('/account/:id', {
+      templateUrl: 'views/accountInfo.html',
       controller: 'apiController'
     })
     .otherwise({
@@ -44,6 +44,14 @@ app.controller('apiController', ['$scope', '$http', function($scope, $http){
   })
   .then(function(data){
     $scope.view.accounts = data.data;
-    console.log($scope.view.accounts);
+    // console.log($scope.view.accounts);
+  })
+  $http({
+    method: "GET",
+    url: "/account/:id"
+  })
+  .then(function(data){
+    $scope.view.account = data;
+    console.log(data);
   })
 }])

@@ -25,4 +25,10 @@ router.get('/api', function(req, res, next){
     res.json(data);
   })
 })
+router.get('/account/:id', function(req, res, next){
+  knex('accounts').where('id', req.params.id).then(function(data){
+    console.log(data);
+    res.json(data);
+  })
+})
 module.exports = router;
