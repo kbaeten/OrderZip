@@ -20,7 +20,7 @@ app.config(['$routeProvider', function($routeProvider) {
     });
 }]);
 
-app.controller('apiController', ['$scope', '$http', function($scope, $http){
+app.controller('apiController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams){
   $scope.view = {};
   $http({
     method: "GET",
@@ -48,10 +48,10 @@ app.controller('apiController', ['$scope', '$http', function($scope, $http){
   })
   $http({
     method: "GET",
-    url: "/account/:id"
+    url: "account/" + $routeParams.id
   })
   .then(function(data){
-    $scope.view.account = data;
-    console.log(data);
+    $scope.view.account = data.data;
+    console.log($scope.view.account);
   })
 }])

@@ -1,15 +1,15 @@
 <div id="accountsInfoContainer">
   <div id="accountInfoTitle">Account Info</div>
   <hr color= "#007DC3">
-  <div class="accountInfoDiv">
+  <div class="accountInfoDiv" ng-repeat="account in view.account">
     <div class="subInfoTitle">Account Name</div>
-    <div class="accountInfo"> {{accounts.name}} </div>
+    <div class="accountInfo"> {{account.name}} </div>
     <div class="subInfoTitle">Phone</div>
-    <div class="accountInfo"> view.accounts.phone </div>
+    <div class="accountInfo"> {{account.phone}} </div>
     <div class="subInfoTitle">Main Contact</div>
-    <div class="accountInfo"> views.accounts.contact </div>
+    <div class="accountInfo"> {{account.contact}} </div>
     <div class="subInfoTitle">Address</div>
-    <div class="accountInfo" id="street"> views.accounts.street </div>
-    <div class="accountInfo"> views.accounts.city + ", "  views.accounts.state + " " views.accounts.zip</div>
+    <div class="accountInfo" id="street"> {{account.street_address}} </div>
+    <div class="accountInfo"> {{account.city}}, {{account.state}} {{account.zip_code}}</div>
   </div>
 </div>

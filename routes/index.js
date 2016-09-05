@@ -27,7 +27,6 @@ router.get('/api', function(req, res, next){
 })
 router.get('/account/:id', function(req, res, next){
   knex('accounts').where('id', req.params.id).then(function(data){
-    console.log(data);
     res.json(data);
   })
 })
