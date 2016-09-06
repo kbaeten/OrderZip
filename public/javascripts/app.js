@@ -4,40 +4,26 @@ app.config(['$routeProvider', function($routeProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'views/landing.html',
-      controller: 'apiController'
-      // controller: "signInController"
     })
     .when('/route', {
       templateUrl: 'views/route.html',
-      controller: 'apiController'
+      controller: 'routesPageController'
     })
     .when('/account/:id', {
       templateUrl: 'views/accountInfo.html',
-      controller: 'apiController'
+      controller: 'accountsInfoPageController'
+    })
+    .when('/order/:id', {
+      templateUrl: 'views/orderPage.html',
+      controller: 'orderPageController'
     })
     .otherwise({
       redirectTo: '/'
     });
 }]);
 
-app.controller('apiController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams){
+app.controller('routesPageController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams){
   $scope.view = {};
-  $http({
-    method: "GET",
-    url: "/api",
-  })
-  .then(function(data){
-    $scope.view.accountBeers = data.data;
-    // console.log($scope.view.accountBeers);
-  })
-  $http({
-    method: "GET",
-    url:"/beers"
-  })
-  .then(function(data){
-    $scope.view.beers = data.data;
-    // console.log($scope.view.beers);
-  })
   $http({
     method: "GET",
     url: "/accounts"
@@ -46,12 +32,34 @@ app.controller('apiController', ['$scope', '$http', '$routeParams', function($sc
     $scope.view.accounts = data.data;
     // console.log($scope.view.accounts);
   })
+}])
+app.controller('accountsInfoPageController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams){
+  $scope.view = {};
   $http({
     method: "GET",
     url: "account/" + $routeParams.id
   })
   .then(function(data){
     $scope.view.account = data.data;
-    console.log($scope.view.account);
   })
+}])
+app.controller('orderPageController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams){
+  $scope.view = {};
+  $http({
+    method: "GET",
+    url: "account/" + $routeParams.id
+  })
+  .then(function(data){
+    $scope.view.account = data.data;
+  })
+  $http({
+    method: "GET",
+    url: "api/order/" + $routeParams.id
+  })
+  .then(function(data){
+    $scope.view.accountInfo = data.data
+    console.log($scope.view.accountInfo);
+  })
+  // $scope.view.orderQuantity = 5;
+  // $scope.view.orderTotal = ;
 }])

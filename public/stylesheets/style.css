@@ -1,7 +1,7 @@
 body {
   background-image: url(/images/BeerCooler.jpg);
   background-size: 100vw;
-  width: 100vw;
+  width: auto;
   margin: 0;
   font-family: 'Cabin', sans-serif;
 }
@@ -67,6 +67,7 @@ a {
   margin-bottom: 20px;
   font-size: 20px;
   border: none;
+  padding-left: 5px;
 }
 #signInButton {
   color: white;
@@ -93,7 +94,7 @@ a {
   margin-bottom: 30px;
 }
 hr {
-  width: 80%;
+  width: 90%;
   margin-bottom: 30px;
 }
 #routesTitle {
@@ -159,4 +160,74 @@ hr {
 }
 #street {
   margin-bottom: 5px;
+}
+
+/*Order page styling*/
+
+#orderContainer {
+  width: 80vw;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.75);
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+}
+#orderTitle {
+  color: white;
+  font-size: 34px;
+  text-align: center;
+  padding-top: 30px;
+}
+#orderAccount {
+  color: #D95C02;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+table {
+  width: 90%;
+  margin: auto;
+  border-collapse: collapse;
+}
+th {
+  color: white;
+  font-size: 20px;
+  padding: 3px;
+  border-bottom: 1px solid #D95C02;
+  margin-bottom: 30px;
+}
+td {
+  color: white;
+  font-size: 14px;
+  padding: 3px;
+  text-align: center;
+  border-bottom: 1px solid #D95C02;
+}
+table input {
+  width: 40px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+#orderTotal {
+  height: 35px;
+}
+#submitButton {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  background-color: #D95C02;
+  font-size: 16px;
+  color: white;
+  width: 140px;
+  height: 35px;
+  border-radius: none;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-style: none;
+}
+#submitButton:hover {
+  background-color: #007DC3;
+  cursor: pointer;
 }

@@ -1,7 +1,37 @@
 <div id="orderContainer">
-  <div id="orderTitle">Today's Route</div>
+  <div id="orderTitle">Order</div>
   <hr color= "#007DC3">
-  <div ng-repeat="beer in view.beers" class="beerDiv">
-
+  <div ng-repeat="account in view.account" id="orderAccount">{{ account.name }}</div>
+  <div class="beerDiv">
+    <table>
+      <tr class="borderBottom">
+        <th>Package</th>
+        <th>Inv. 8/11</th>
+        <th>Inv. 8/18</th>
+        <th>Inv. 8/25</th>
+        <th>Inv. 9/1</th>
+        <th>Today</th>
+        <th>Order Quantity</th>
+      </tr>
+      <tr ng-repeat="info in view.accountInfo">
+        <td>{{ info.brew }} <br> {{info.package}}</td>
+        <td>{{ info.week_4 }}</td>
+        <td>{{ info.week_3 }}</td>
+        <td>{{ info.week_2 }}</td>
+        <td>{{ info.week_1 }}</td>
+        <td><input type="text" ng-model="currentInv"></td>
+        <td>{{ view.orderQuantity }}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Total Cases</td>
+        <td id="orderTotal">{{view.orderTotal}}</td>
+      </tr>
+    </table>
+      <a href="?#/route"><input type="button" value="Submit Order" id="submitButton"></a>
   </div>
 </div>

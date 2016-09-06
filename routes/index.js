@@ -30,4 +30,13 @@ router.get('/account/:id', function(req, res, next){
     res.json(data);
   })
 })
+router.get('/api/order/:id', function(req, res, next){
+  knex('accounts_beers')
+  .where('account_id', req.params.id)
+  .fullOuterJoin('beers', 'beer_id', 'beers.id')
+  // .fullOuterJOin('accounts_beers')
+  .then(function(data){
+    res.json(data);
+  })
+})
 module.exports = router;
