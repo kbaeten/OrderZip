@@ -45,7 +45,7 @@ app.controller('accountsInfoPageController', ['$scope', '$http', '$routeParams',
 }])
 app.controller('orderPageController', function($scope, $http, $routeParams){
   $scope.view = {};
-  $scope.view.currentInv = 0;
+  // $scope.view.currentInv = 0;
   $http({
     method: "GET",
     url: "account/" + $routeParams.id
@@ -59,8 +59,17 @@ app.controller('orderPageController', function($scope, $http, $routeParams){
   })
   .then(function(data){
     $scope.view.accountInfo = data.data;
-    $scope.$watch('view.currentInv', function(newValue, oldValue) {
-      $scope.view.orderQuantity = newValue;
-    });
   })
+  $scope.$watch('view.currentInv', function(newValue, oldValue) {
+    var whatToOrder = $scope.info.sku_velocity * $scope.info.order_multiple;
+    var minBeerForWeek = $scope.info.sku_velocity * $scope.info.trigger_qty;
+    if(newValue > minBeerForWeek ){
+      $scope.view.orderQuantity = 0;
+      // console.log($scope.info.sku_velocity, $scope.view.accountInfo[i].order_multiple);
+    }
+    else {
+      $scope.view.orderQuantity = whatToOrder;
+      $scope.view.orderTotal += whatToOrder;
+    }
+  });
 })
