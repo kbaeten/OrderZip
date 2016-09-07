@@ -13,14 +13,7 @@
         <th>Today</th>
         <th>Order Quantity</th>
       </tr>
-      <tr ng-repeat="info in view.accountInfo">
-        <td>{{ info.brew }} <br> {{info.package}}</td>
-        <td>{{ info.week_4 }}</td>
-        <td>{{ info.week_3 }}</td>
-        <td>{{ info.week_2 }}</td>
-        <td>{{ info.week_1 }}</td>
-        <td><input type="text" ng-model="currentInv"></td>
-        <td>{{ view.orderQuantity }}</td>
+      <tr order-math ng-repeat= "info in view.accountInfo">
       </tr>
       <tr>
         <td></td>

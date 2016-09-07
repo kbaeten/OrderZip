@@ -43,8 +43,9 @@ app.controller('accountsInfoPageController', ['$scope', '$http', '$routeParams',
     $scope.view.account = data.data;
   })
 }])
-app.controller('orderPageController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams){
+app.controller('orderPageController', function($scope, $http, $routeParams){
   $scope.view = {};
+  $scope.view.currentInv = 0;
   $http({
     method: "GET",
     url: "account/" + $routeParams.id
@@ -57,9 +58,9 @@ app.controller('orderPageController', ['$scope', '$http', '$routeParams', functi
     url: "api/order/" + $routeParams.id
   })
   .then(function(data){
-    $scope.view.accountInfo = data.data
-    console.log($scope.view.accountInfo);
+    $scope.view.accountInfo = data.data;
+    $scope.$watch('view.currentInv', function(newValue, oldValue) {
+      $scope.view.orderQuantity = newValue;
+    });
   })
-  // $scope.view.orderQuantity = 5;
-  // $scope.view.orderTotal = ;
-}])
+})
