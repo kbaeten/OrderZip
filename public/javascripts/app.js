@@ -61,15 +61,15 @@ app.controller('orderPageController', function($scope, $http, $routeParams){
     $scope.view.accountInfo = data.data;
   })
   $scope.$watch('view.currentInv', function(newValue, oldValue) {
+    $scope.view.orderTotal = 0;
     var whatToOrder = $scope.info.sku_velocity * $scope.info.order_multiple;
     var minBeerForWeek = $scope.info.sku_velocity * $scope.info.trigger_qty;
-    if(newValue > minBeerForWeek ){
+    if(newValue > minBeerForWeek){
       $scope.view.orderQuantity = 0;
       // console.log($scope.info.sku_velocity, $scope.view.accountInfo[i].order_multiple);
     }
     else {
       $scope.view.orderQuantity = whatToOrder;
-      $scope.view.orderTotal += whatToOrder;
     }
   });
 })
